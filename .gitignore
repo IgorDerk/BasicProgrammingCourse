@@ -1,3 +1,9 @@
+.idea/
+
+.gitattributes/
+
+.Basic Programming Course.iml
+
 ### IntelliJ IDEA ###
 out/
 !**/src/main/**/out/
