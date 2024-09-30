@@ -15,6 +15,10 @@ public class Task_02 {
     }
 
     public static int sumEvenNumbers(int[] array) {
+        if (array == null || array.length == 0) {
+            return Integer.MIN_VALUE; // Хорошего решения на этой стадии нет. Компромиссный вариант
+        }
+        
         int sum = 0;
         for (int i = 0; i < array.length; i++) {
             int num = array[i];
@@ -22,6 +26,7 @@ public class Task_02 {
                 sum += num;
             }
         }
+        
         return sum;
 
 
