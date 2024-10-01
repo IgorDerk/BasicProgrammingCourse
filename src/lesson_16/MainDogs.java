@@ -1,5 +1,6 @@
 package lesson_16;
 
+
 public class MainDogs {
     public static void main(String[] args) {
 
@@ -13,8 +14,13 @@ public class MainDogs {
         dog.run();
         dog.run();
         dog.run();
+        dog.run();
+        dog.run();
+        dog.run();
+        dog.run();
 
         System.out.println(dog.info());
+
 
     }
 }
