@@ -9,7 +9,7 @@ public class TestArray {
 
         int[] initialArray = {100, 200, 300};
         MagicArray magicArrayWithValues = new MagicArray(initialArray);
-        System.out.println("Массив, созданный через конструктор с массивом: " + magicArrayWithValues.toString());
+        System.out.println("Массив, созданный через конструктор: " + magicArrayWithValues.toString());
 
         int[] array = new int[10];
         array[0] = 100;
