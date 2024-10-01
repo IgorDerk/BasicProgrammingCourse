@@ -2,12 +2,8 @@ package homework_15;
 
 public class Tablet {
     public static void main(String[] args) {
-        Technic technic = new Technic("Tablet",  27.94, 498   );
 
-
-        technic.turnedOn();
-        technic.show();
-        technic.turnedOff();
+        Technic technic = new Technic("Tablet", 27.94, 498);
 
         String technicName = technic.name;
         System.out.println("Наименование: " + technicName);
@@ -18,6 +14,10 @@ public class Tablet {
         double technicWeight = technic.weight;
         System.out.println("Вес: " + technicWeight + " г");
 
+
+        technic.turnedOn();
+        technic.show();
+        technic.turnedOff();
 
     }
 }
