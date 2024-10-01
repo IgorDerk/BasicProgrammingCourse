@@ -5,6 +5,10 @@ public class Tablet {
 
         Technic technic = new Technic("Tablet", 27.94, 498);
 
+        technic.turnedOn();
+        technic.show();
+        technic.turnedOff();
+
         String technicName = technic.name;
         System.out.println("Наименование: " + technicName);
 
@@ -15,9 +19,7 @@ public class Tablet {
         System.out.println("Вес: " + technicWeight + " г");
 
 
-        technic.turnedOn();
-        technic.show();
-        technic.turnedOff();
+
 
     }
 }
