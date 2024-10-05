@@ -30,7 +30,7 @@ public class MagicArray {
     public MagicArray(int[] initialArray) {
         if (initialArray == null) {
             System.out.println("Внимание! Используется пустой массив!");
-            initialArray = new int[0];
+            initialArray = new int[10];
         }
         array = new int[initialArray.length];
         cursor = initialArray.length;

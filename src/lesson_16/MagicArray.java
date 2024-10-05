@@ -2,21 +2,30 @@
 package lesson_16;
 
 
-
 public class MagicArray {
-    int[] array;
-    int cursor; // присвоено значение по умолчанию = 0;
+    private int[] array;
+    private int cursor; // присвоено значение по умолчанию = 0;
 
     public MagicArray() {
         array = new int[10];
     }
 
+    public MagicArray(int[] array) {
+        if (array == null) {
+            this.array = new int[10];
+        } else {
+
+            this.array = new int[array.length * 2];
+            add(array);
+        }
+    }
+
     // Добавление в массив одного элемента
-    void add (int value) {
+    void add(int value) {
 
         // Проверка. Есть ли вообще свободное место во внутреннем массиве
         // Если места нет - нужно добавить место
-        if (cursor == array.length -1) {
+        if (cursor == array.length - 1) {
             // Расширить массив перед добавлением нового элемента
             expandArray();
         }
@@ -96,13 +105,39 @@ public class MagicArray {
         4. Вернуть старое значение
         */
         //Todo реализовать
+        if (index >= 0 && index < cursor -1) {
+            int value = array[index];
+            for (int i = index; i < cursor; i++) {
+                array[i] = array[i + 1];
+            }
+            cursor--;
+
+            return value;
+
+
+        } else {
+            return Integer.MIN_VALUE;
+        }
+
+    }
+
+    int indexOf(int value) {
+        for (int i = 0; i < cursor; i++) {
+            if (array[i] == value) {
+                return i;
+            }
+        }
         return -1;
     }
 
 
+    boolean removeByValue(int value){
+        int index = indexOf(value);
+        if(index == -1) return false;
 
-
-
+        remove(index);
+        return true;
+    }
 
 }
 
