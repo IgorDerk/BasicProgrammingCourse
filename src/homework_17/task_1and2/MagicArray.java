@@ -1,5 +1,5 @@
 
-package homework_17.task_1;
+package homework_17.task_1and2;
 /*
 Task 1
 Инкапсулировать класс нашего магического массива

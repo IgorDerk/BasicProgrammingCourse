@@ -1,4 +1,4 @@
-package homework_17.task_1;
+package homework_17.task_1and2;
 
 
 public class MagicApp {
