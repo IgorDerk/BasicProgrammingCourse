@@ -26,7 +26,7 @@ public class Employee {
         return String.format("Employee: %s, age: %d, salary: %.2f", name, age, salary);
     }
 
-    String info() {
+     String info() {
         return String.format(this.toString());
     }
 
