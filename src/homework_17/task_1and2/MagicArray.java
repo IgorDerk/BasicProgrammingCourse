@@ -43,7 +43,7 @@ public class MagicArray {
 
 
     // Динамическое расширение массива
-    public void expandArray() {
+    private void expandArray() {
         System.out.println("Расширяем массив! Курсор = " + cursor);
         /*
         1. создать новый массив бОльшего размера (в 2 раза больше)

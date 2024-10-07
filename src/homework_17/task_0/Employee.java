@@ -15,18 +15,47 @@ public class Employee {
     private int age;
     private double salary;
 
-    Employee(String name, int age, double salary){
+
+    public Employee(String name, int age, double salary) {
         this.name = name;
         this.age = age;
         this.salary = salary;
     }
 
-    String info(){
-        return String.format("Employee: %s, age: %d, salary: %.2f", name,age,salary);
+    public String toString() {
+        return String.format("Employee: %s, age: %d, salary: %.2f", name, age, salary);
     }
 
+    String info() {
+        return String.format(this.toString());
+    }
 
+    public String getName() {
+        return name;
+    }
 
+    public void setName(String name) {
+        if (name == null || name.isEmpty()) return;
+        this.name = name;
+    }
+
+    public int getAge() {
+
+        return age;
+    }
+
+    public void setAge(int age) {
+        if (age < 0) return;
+        this.age = age;
+    }
+
+    public double getSalary() {
+        return salary;
+    }
+
+    public void setSalary(double salary) {
+        this.salary = salary;
+    }
 
 
 }
