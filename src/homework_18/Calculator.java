@@ -13,20 +13,21 @@ Task 1
 public class Calculator {
 
 
-    static int addition(int a, int b) {
+    public static int addition(int a, int b) {
 
         return a + b;
     }
 
-    static int subtraction(int a, int b) {
+
+    public static int subtraction(int a, int b) {
         return a - b;
     }
 
-    static int multiplication(int a, int b) {
+    public static int multiplication(int a, int b) {
         return a * b;
     }
 
-    static int division(int a, int b) {
+    public static int division(int a, int b) {
         if (b == 0) {
             System.out.println("Ошибка: деление на ноль недопустимо!!!");
             return Integer.MIN_VALUE;
@@ -35,11 +36,8 @@ public class Calculator {
     }
 
 
-    public static void main(String[] args) {
-        System.out.println("addition: " + Calculator.addition(32, 4));
-        System.out.println("subtraction: " + Calculator.subtraction(67, 4));
-        System.out.println("multiplication: "  + Calculator.multiplication(34, 4));
-        System.out.println("division: " + Calculator.division(45, 5));
+    public static double division(double a, double b) {
+        return a / b;
     }
 
 }
