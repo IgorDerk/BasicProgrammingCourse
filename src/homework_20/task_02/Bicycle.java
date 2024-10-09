@@ -8,15 +8,8 @@ public class Bicycle extends Vehicle {
         this.hasBell = hasBell;
     }
 
-    public boolean hasBell(){
-        return hasBell;
-    }
 
-    public void setHasBell(boolean hasBell) {
-        this.hasBell = hasBell;
-    }
-
-    public String bicycleInfo(){
+    public String bicycleInfo() {
         return super.toString() + ", есть звонок: " + (hasBell ? "Да" : "Нет");
-     }
+    }
 }
