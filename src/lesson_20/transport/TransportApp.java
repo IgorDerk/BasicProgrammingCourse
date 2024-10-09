@@ -11,6 +11,28 @@ public class TransportApp {
         System.out.println("bus.getModel(): " + bus.getModel());
         System.out.println("bus.getCapacity(): " + bus.getCapacity());
 
+        System.out.println("\n==========\n");
+
+        Train train = new Train("Skoda", 2022, 4, 40);
+        System.out.println(train.toString());
+        train.start();
+        System.out.println(train.getModel());
+
+        System.out.println("Capacity: " + train.getCapacity());
+        train.setCountWagons(3);
+        System.out.println("Capacity: "+train.getCapacity());
+
+        System.out.println("\n===============");
+
+        Bus bus1 = new Bus("Bus-X2", 2024, 3);
+        System.out.println(bus1.takePassenger());
+        System.out.println("===================");
+        System.out.println(bus1.takePassenger());
+        System.out.println("===================");
+        System.out.println(bus1.takePassenger());
+        System.out.println("===================");
+        System.out.println(bus1.takePassenger());
+
 
     }
 }

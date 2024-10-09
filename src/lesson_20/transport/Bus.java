@@ -10,6 +10,16 @@ public class Bus extends Vehicle{
         this.capacity = capacity;
     }
 
+    public boolean takePassenger(){
+       if (countPassengers < capacity){
+           countPassengers++;
+           System.out.println("Пассажир зашел в автобус " + this.getModel());
+           return true;
+       }
+        System.out.printf("В автобусе %s больше нет мест. Сейчас %d пасажиров\n", this.getModel(),countPassengers);
+       return false;
+    }
+
     public int getCapacity() {
         return capacity;
     }
