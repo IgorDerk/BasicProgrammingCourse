@@ -20,6 +20,16 @@ public class Bus extends Vehicle{
        return false;
     }
 
+    public boolean dropPassenger(){
+            if (countPassengers > 0){
+                countPassengers--;
+                System.out.println("Пассажир вышел из автобуса " + this.getModel());
+                return true;
+            }
+            System.out.printf("В автобусе %s пусто. Сейчас %d пасажиров \n", this.getModel(),countPassengers);
+            return false;
+    }
+
     public int getCapacity() {
         return capacity;
     }

@@ -33,6 +33,17 @@ public class TransportApp {
         System.out.println("===================");
         System.out.println(bus1.takePassenger());
 
+        System.out.println("\nbus1.getCountPassengers(): " + bus1.getCountPassengers());
 
+        System.out.println("\n==================");
+        System.out.println(bus1.dropPassenger());
+        System.out.println("===================");
+        System.out.println(bus1.dropPassenger());
+        System.out.println("===================");
+        System.out.println(bus1.dropPassenger());
+        System.out.println("===================");
+        System.out.println(bus1.dropPassenger());
+
+        System.out.println("bus1.getCountPassengers(): " + bus1.getCountPassengers());
     }
 }
