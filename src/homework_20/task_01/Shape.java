@@ -1,4 +1,5 @@
 package homework_20.task_01;
+
 /*
 Task 1
 Иерархия классов “Фигуры”
@@ -32,17 +33,18 @@ Copy
 •	В методе main работаете с объектами Rectangle и Circle, используя унаследованные и собственные методы этих классов.
  */
 public class Shape {
-    private String name;
+    private final String name;
 
-    public Shape(String name){
+    public Shape(String name) {
         this.name = name;
     }
 
-    public void displayInfo(){
+    public void displayInfo() {
         System.out.println("Фигура: " + name);
 
     }
-    public String getName(){
+
+    public String getName() {
         return name;
     }
 

@@ -15,15 +15,14 @@ public class Rectangle extends Shape {
 
     }
 
-    public  double calculateArea() {
-        if (width < 0 || height < 0 ){
+    public double calculateArea() {
+        if (width < 0 || height < 0) {
             System.out.println("Ошибка: параметр стороны не может быть отрицательным!!!");
             return Integer.MIN_VALUE;
         }
         return width * height;
     }
 
-//
 
 }
 

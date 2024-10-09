@@ -13,7 +13,7 @@ public class Circle extends Shape {
     }
 
     public double calculateArea() {
-        if (radius < 0){
+        if (radius < 0) {
             System.out.println("Ошибка: радиус не может быть отрицательным!!!");
             return Integer.MIN_VALUE;
         }
