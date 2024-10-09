@@ -1,22 +1,23 @@
 package lesson_20.transport;
 
+
 public class Train extends Vehicle {
+
     private int capacity;
-    private int countPassengers;
+    private  int countPassengers;
 
     private int countWagons;
     private final int wagonCapacity;
 
-    public Train(String model, int year, int countWagons, int wagonCapacity) {
-        super(model, year);
-        this.countWagons = countWagons;
+    public Train(String model, int year, int wagonCapacity, int countWagons) {
+        super(model, year); // Конструктор родителя
         this.wagonCapacity = wagonCapacity;
+        this.countWagons = countWagons;
         calculateCapacity();
     }
 
     private void calculateCapacity() {
         this.capacity = countWagons * wagonCapacity;
-
     }
 
     public void setCountWagons(int countWagons) {

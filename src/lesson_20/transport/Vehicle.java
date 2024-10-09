@@ -1,4 +1,6 @@
+
 package lesson_20.transport;
+
 
 public class Vehicle {
     private String model;
@@ -7,8 +9,6 @@ public class Vehicle {
     public Vehicle(String model, int year) {
         this.model = model;
         this.year = year;
-
-
     }
 
     public void start() {
@@ -17,14 +17,11 @@ public class Vehicle {
 
     public void stop() {
         System.out.println(model + " останавливается");
-
     }
-
 
     public String toString() {
-        return model + " year of manufacture is " + year;
+        return model + ", year of manufacture is " + year;
     }
-
 
     public String getModel() {
         return model;
@@ -38,5 +35,5 @@ public class Vehicle {
         return year;
     }
 
-}
 
+}
