@@ -1,4 +1,4 @@
-package homework_21.task_3;
+package homework_21.task_03;
 /*
 Task 3 * (Опционально)
 Переписать метод public String toString()в классе Autobus, используя StringBuilder для формирования строки.

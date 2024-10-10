@@ -28,6 +28,6 @@ public class Autopilot {
         this.softwareVersion = softwareVersion;
     }
 
-    public void setAutobus(homework_21.task_3.Autobus autobus) {
+    public void setAutobus(homework_21.task_03.Autobus autobus) {
     }
 }
