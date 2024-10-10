@@ -1,22 +1,19 @@
-package lesson_21;
-
+package homework_21.task_01;
 
 public class AutoPark {
     public static void main(String[] args) {
 
         BusDriver busDriver = new BusDriver("John", "LN-19945395");
-
-
         Autobus bus = new Autobus(busDriver, 15);
 
 
-        BusDriver busDriver1 = new BusDriver("Margo", "AE-54565655");
+        BusDriver busDriver1 = new BusDriver("Margo", "AE-54545656565");
         Autobus bus1 = new Autobus(busDriver1, 24);
 
         System.out.println("bus: " + bus.toString());
         System.out.println("bus1: " + bus1.toString());
 
-        BusDriver peter = new BusDriver("Peter", "PE-45878889");
+        BusDriver peter = new BusDriver("Peter", "PE-45875858");
         bus1.setDriver(peter);
         System.out.println("bus1: " + bus1.toString());
 
@@ -24,13 +21,13 @@ public class AutoPark {
 
         System.out.println(peter.toString());
 
-        bus.installNewAutopilot("AP-gpt6");
+        bus.intstallNewAutopilot("AP-gpt6");
         System.out.println(bus.toString());
         busDriver.setName("Sebastian");
         System.out.println(bus.toString());
 
-        System.out.println("\n============================");
-        System.out.println("количество пассажиров в автобусе: " + bus.getCountPassenger());
+        System.out.println("\n=========");
+        System.out.println("Количество пассажиров в автобусе: " + bus.getCountPassenger());
         bus.showListOfPassengers();
 
         Passenger passenger = new Passenger("John");
@@ -38,13 +35,12 @@ public class AutoPark {
 
         bus.takePassenger(passenger);
         bus.showListOfPassengers();
-        System.out.println("===============");
+        System.out.println("==========");
         bus.takePassenger(margo);
         bus.showListOfPassengers();
-        System.out.println("===============");
+        System.out.println("==========");
         bus.takePassenger(margo);
         bus.showListOfPassengers();
-
 
     }
 }

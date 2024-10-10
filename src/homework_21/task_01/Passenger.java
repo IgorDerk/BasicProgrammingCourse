@@ -1,10 +1,9 @@
-package lesson_21;
-
+package homework_21.task_01;
 
 public class Passenger {
-    private static int counterId;
 
-    private final int id;
+    private static int counterId;
+    private  final int id;
     private String name;
 
     public Passenger(String name) {
@@ -12,10 +11,9 @@ public class Passenger {
         this.id = ++counterId;
     }
 
-    public String toString() {
-        return "Passenger id: " + id + " name: " + name;
+    public String toString(){
+        return "Passenger id: "+ id + " name: " + name;
     }
-
 
     public int getId() {
         return id;

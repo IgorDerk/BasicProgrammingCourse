@@ -66,7 +66,7 @@ public class HomeWork03 {
 
         double averageSumDays = sumDaysDouble / 7;
 
-        // TODO
+
 
 
         //System.out.println("The average temperature in Rostock over the past week : " + averageTemperaturePerWeek);

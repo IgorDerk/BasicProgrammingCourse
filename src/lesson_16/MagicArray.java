@@ -93,7 +93,7 @@ public class MagicArray {
         }
         // Написать код, если индекс "не корректный"
         return Integer.MIN_VALUE; // Хорошего решения нет.
-        //Todo Поправить обработку не корректного индекса
+
     }
 
     // Удаление элемента по индексу
@@ -104,7 +104,7 @@ public class MagicArray {
         3. Передвинуть курсор (т.к. кол-во элементов уменьшилось)
         4. Вернуть старое значение
         */
-        //Todo реализовать
+
         if (index >= 0 && index < cursor -1) {
             int value = array[index];
             for (int i = index; i < cursor; i++) {

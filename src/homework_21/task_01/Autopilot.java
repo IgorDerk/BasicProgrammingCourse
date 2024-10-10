@@ -1,11 +1,10 @@
-package lesson_21;
-
+package homework_21.task_01;
 
 public class Autopilot {
     private String softwareVersion;
     private Autobus autobus;
 
-    public Autopilot(String softwareVersion) {
+    public Autopilot(String softwareVersion){
         this.softwareVersion = softwareVersion;
     }
 
@@ -17,7 +16,7 @@ public class Autopilot {
         this.autobus = autobus;
     }
 
-    public String toString() {
+    public String toString(){
         return "Autopilot: { SV: " + softwareVersion + "}";
     }
 
@@ -27,5 +26,8 @@ public class Autopilot {
 
     public void setSoftwareVersion(String softwareVersion) {
         this.softwareVersion = softwareVersion;
+    }
+
+    public void setAutobus(homework_21.task_3.Autobus autobus) {
     }
 }
