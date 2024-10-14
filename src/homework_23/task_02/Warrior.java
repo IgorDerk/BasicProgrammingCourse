@@ -1,4 +1,4 @@
-package homework_23;
+package homework_23.task_02;
 
 public class Warrior extends GameCharacter{
     @Override

@@ -1,4 +1,4 @@
-package homework_23;
+package homework_23.task_02;
 /*
 Task 2
 Создайте абстрактный класс GameCharacter, который представляет базовый класс для игровых персонажей.
