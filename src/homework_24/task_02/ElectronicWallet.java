@@ -12,6 +12,8 @@ public class ElectronicWallet implements PaymentSystem {
         if (amount <= balance) {
             balance -= amount;
             System.out.printf("Списано %.2f $. Новый баланс: %.2f $\n", amount, balance);
+        } else {
+            System.out.println("Недостаточно средств на счете.");
         }
 
     }
