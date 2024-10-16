@@ -11,6 +11,7 @@ checkBalance() (остаток на счете).
 Убедитесь, что каждый класс корректно выполняет каждую из операций.
  */
 public interface PaymentSystem {
+
     void withdrawMoney(double amount);
 
     void depositTransfer(double amount);
