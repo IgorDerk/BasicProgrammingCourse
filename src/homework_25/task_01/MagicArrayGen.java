@@ -1,18 +1,21 @@
 package homework_25.task_01;
+
 /*
 Task 1
 Параметризовать наш класс "Magic Array", добавив в него обобщение типа (generic).
 
-Реализовать в классе параметризованный интерфейс MyList (код интерфейса прикреплен к уроку)
+
  */
-public class MagicArrayGen <T> {
+public class MagicArrayGen<T> {
     private T[] array;
     private int cursor; // присвоено значение по умолчанию = 0;
-@SuppressWarnings("unchecked")
+
+    @SuppressWarnings("unchecked")
     public MagicArrayGen() {
-        array = (T[])new Object[10];
+        array = (T[]) new Object[10];
     }
-@SuppressWarnings("unchecked")
+
+    @SuppressWarnings("unchecked")
     public MagicArrayGen(int[] array) {
         if (array == null || array.length == 0) {
             this.array = (T[]) new Object[10];
@@ -46,7 +49,7 @@ public class MagicArrayGen <T> {
         }
     }
 
-@SuppressWarnings("unchecked")
+    @SuppressWarnings("unchecked")
     // Динамическое расширение массива
     private void expandArray() {
         System.out.println("Расширяем массив! Курсор = " + cursor);
@@ -96,6 +99,7 @@ public class MagicArrayGen <T> {
         // Написать код, если индекс "не корректный"
         return null;
     }
+
     // Удаление элемента по индексу
     public T remove(int index) {
         /*
@@ -161,7 +165,6 @@ public class MagicArrayGen <T> {
         remove(index);
         return true;
     }
-
 
 
 }
