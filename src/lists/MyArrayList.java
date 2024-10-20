@@ -1,7 +1,9 @@
 package lists;
 
 
-public class MyArrayList<T> {
+import java.lang.reflect.Array;
+
+public class MyArrayList<T> implements MyList<T> {
     private T[] array;
     private int cursor; // присвоено значение по умолчанию = 0;
 
@@ -18,7 +20,7 @@ public class MyArrayList<T> {
             this.array = (T[]) new Object[10];
         } else {
             this.array = (T[]) new Object[array.length * 2];
-            add(array);
+            addAll(array);
         }
     }
 
@@ -37,8 +39,8 @@ public class MyArrayList<T> {
         cursor++;
     }
 
-
-    public void add(T... numbers) {
+    @Override
+    public void addAll(T... numbers) {
         // с numbers я могу обращаться точно также, как со ссылкой на массив int
         // System.out.println("Приняли несколько интов. А именно: " + numbers.length);
         // System.out.println("Есть индекс у каждого инта, как в массиве. По индексом 0: " + numbers[0]);
@@ -126,6 +128,25 @@ public class MyArrayList<T> {
         }
     }
 
+    @Override
+    public boolean contains(T value) {
+
+        return indexOf(value) >= 0;
+    }
+
+    @Override
+    public void set(int index, T value) {
+        if (index >= 0 && index < cursor) {
+            array[index] = value;
+        }
+
+    }
+
+    @Override
+    public boolean isEmpty() {
+        return cursor == 0;
+    }
+
     // Поиск по значению. Первое вхождение
     // {1, 100, 5, 5, 100} -> 100 метод вернет индекс первого найдено вхождения = 1
     public int indexOf(T value) {
@@ -151,8 +172,10 @@ public class MyArrayList<T> {
         return -1;
     }
 
+
     // Удаление элемента по значению
-    public boolean removeByValue(T value) {
+    @Override
+    public boolean remove(T value) {
         /*
         1. Есть ли элемент с таким значение в массиве - indexOf
         2. Если элемента нет - вернуть false
@@ -165,7 +188,31 @@ public class MyArrayList<T> {
         return true;
     }
 
+    @SuppressWarnings("unchecked")
+    @Override
+    public T[] toArray() {
 
+        if(cursor == 0) return null;
+       // if(cursor == 0) return (T[]) new Object[0];
+
+        Class<T> clazz = (Class<T>) array[0].getClass();
+        // System.out.println("clazz: " + clazz);
+
+        T[] result = (T[]) Array.newInstance(clazz, cursor);
+        for (int i = 0; i < result.length; i++) {
+            result[i] = array[i];
+        }
+
+        return result;
+
+  /*
+        T[] result = (T[] ) new Object[cursor];
+        for (int i = 0; i < result.length; i++) {
+            result[i] = array[i];
+
+        }*/
+
+    }
 }
 
 /*
