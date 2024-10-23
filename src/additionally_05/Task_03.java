@@ -25,8 +25,8 @@ public class Task_03 {
         char secondLetter = strUser.charAt(indexMiddle + 1);
         System.out.println("" + firstLetter + secondLetter);
 
-        String substr = strUser.substring(indexMiddle, indexMiddle + 2);
-        System.out.println(substr);
+        String subStr = strUser.substring(indexMiddle, indexMiddle + 2);
+        System.out.println(subStr);
     }
 
 }

@@ -1,17 +1,30 @@
 package lists;
 
-
 import java.lang.reflect.Array;
+import java.util.Iterator;
 
-public class MyArrayList<T> implements MyList<T> {
+
+
+/*
+Iterable - означает, что все объекты этого класса можно перебирать (итерировать). Содержит всего один метод,
+который возвращает итератор (тот самый объект-закладку, который позволяет перебирать коллекцию)
+
+Iterator<T> iterator() - возвращает итератор для коллекции
+
+// Iterator - собственно итератор, который позволяет обходить коллекцию.
+boolean hasNext() - есть ли следующий элемент
+T next() -> возвращает следующий элемент
+void remove() - не обязательный. Удаляет последний возвращенный элемент.
+
+ */
+
+public class MyArrayList<T> implements MyList<T>, Iterable<T> {
     private T[] array;
     private int cursor; // присвоено значение по умолчанию = 0;
 
     @SuppressWarnings("unchecked") // Подавляю предупреждение компилятора о непроверяемом приведении типа
     public MyArrayList() {
         array = (T[]) new Object[10];
-
-
     }
 
     @SuppressWarnings("unchecked")
@@ -86,12 +99,14 @@ public class MyArrayList<T> implements MyList<T> {
         return result;
     }
 
+
     // Текущее количество элементов в массиве
     public int size() {
         return cursor;
     }
 
     // Возвращает значение по индексу
+    @Override
     public T get(int index) {
         if (index >= 0 && index < cursor) {
             return array[index];
@@ -128,22 +143,52 @@ public class MyArrayList<T> implements MyList<T> {
         }
     }
 
+    // Удаление элемента по значению
     @Override
-    public boolean contains(T value) {
+    public boolean remove(T value) {
+        /*
+        1. Есть ли элемент с таким значение в массиве - indexOf
+        2. Если элемента нет - вернуть false
+        3. Если элемент есть - удалить и вернуть true - вызвать удаление по индексу
+         */
+        int index = indexOf(value);
+        if (index == -1) return false;
 
-        return indexOf(value) >= 0;
+        remove(index);
+        return true;
     }
 
+    @Override
+    public boolean contains(T value) {
+        // 3 >= 0 -> true (элемент найден) | -1 >= 0 -> false (не содержится)
+        return indexOf(value) >= 0;
+
+//        int index = indexOf(value);
+//        if (index >= 0) {
+//            // Индекс, который вернулся больше нуля - элемент найден
+//            return true;
+//        }
+//        else {
+//            // index меньше нуля (минус 1), значит такое значение не найдено = не содержится в нашем массиве
+//            return false;
+//        }
+    }
+
+    // Перезаписывает значение по указанному индексу
     @Override
     public void set(int index, T value) {
         if (index >= 0 && index < cursor) {
+            // Если индекс "правильный" присваиваем новое значение
             array[index] = value;
         }
+        // Если нет, ничего не делаем
 
     }
 
+    // Является ли коллекция пустой
     @Override
     public boolean isEmpty() {
+        // Если курсор равен 0 - значит у нас нет элементов во внутреннем массиве
         return cursor == 0;
     }
 
@@ -172,48 +217,75 @@ public class MyArrayList<T> implements MyList<T> {
         return -1;
     }
 
-
-    // Удаление элемента по значению
-    @Override
-    public boolean remove(T value) {
-        /*
-        1. Есть ли элемент с таким значение в массиве - indexOf
-        2. Если элемента нет - вернуть false
-        3. Если элемент есть - удалить и вернуть true - вызвать удаление по индексу
-         */
-        int index = indexOf(value);
-        if (index == -1) return false;
-
-        remove(index);
-        return true;
-    }
-
+    // Вернуть наш магический массив в виде обычного массива
     @SuppressWarnings("unchecked")
     @Override
     public T[] toArray() {
+        /*
+        1. Создать новый массив размерностью cursor
+        2. Пройтись по нашему Внутреннему массиву и скопировать все элементы в новый массив
+        3. Вернуть ссылку на новый массив
+         */
 
-        if(cursor == 0) return null;
-       // if(cursor == 0) return (T[]) new Object[0];
+
+        // Взять какой-то объект из моего массива и узнать на стадии выполнение программы тип этого объекта.
+        // И потом могу создать массив этого типа данных
+
+        if (cursor == 0) return null;
+        // if (cursor == 0) return (T[]) new Object[0]; // ошибка в RunTime
 
         Class<T> clazz = (Class<T>) array[0].getClass();
-        // System.out.println("clazz: " + clazz);
+//        System.out.println("clazz = " + clazz);
 
+        // Создаю массив того же типа, как и 0-й элемент
         T[] result = (T[]) Array.newInstance(clazz, cursor);
+
         for (int i = 0; i < result.length; i++) {
             result[i] = array[i];
         }
 
         return result;
 
-  /*
-        T[] result = (T[] ) new Object[cursor];
-        for (int i = 0; i < result.length; i++) {
-            result[i] = array[i];
 
-        }*/
+//          Этот код вызывает ошибку
+//        T[] result = (T[]) new Object[cursor];
+//        for (int i = 0; i < result.length; i++) {
+//            result[i] = array[i];
+//        }
+
 
     }
-}
+
+    @Override
+    public Iterator<T> iterator() {
+        // написать имплементацию Iterator<T>
+        return new MyIterator();
+    }
+
+    private class MyIterator implements Iterator<T> {
+
+        int currentIndex = 0;
+
+        // boolean hasNext() - есть ли следующий элемент
+
+
+        @Override
+        public boolean hasNext() {
+            return currentIndex < cursor;
+        }
+
+        //  T next() -> возвращает следующий элемент
+        @Override
+        public T next() {
+            return array[currentIndex++];
+//            T value = array[currentIndex];
+//            currentIndex++;
+//            return value;
+        }
+    } // End MyIterator
+
+
+} // Класс MyArrayList
 
 /*
 1. Добавлять в массив элемент (не думая об индексах, размере массива) ++
