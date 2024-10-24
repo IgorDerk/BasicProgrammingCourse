@@ -28,10 +28,15 @@ public enum Seasons {
         return russianName;
     }
 
-    @Override
+    public String printMethod(){
+        return  String.format("Сезон: %s, средняя температура: %d°C", this.russianName, this.averageTempSeasons );
+    }
+
+  /*  @Override
     public String toString() {
         return "Сезон: " + this.russianName +
                 ", средняя температура: " + this.averageTempSeasons + "°C";
     }
-}
 
+   */
+}
