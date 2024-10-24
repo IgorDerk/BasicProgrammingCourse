@@ -11,8 +11,8 @@ public enum Seasons {
     SUMMER("Лето", 20),
     FALL("Осень", 14);
 
-    private String russianName;
-    private int averageTempSeasons;
+    private final String russianName;
+    private final int averageTempSeasons;
 
     Seasons(String russian, int temp) {
         this.russianName = russian;
