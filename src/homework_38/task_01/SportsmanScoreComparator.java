@@ -8,6 +8,6 @@ public class SportsmanScoreComparator implements Comparator<Sportsman> {
     public int compare(Sportsman sportsman1, Sportsman sportsman2) {
 
 
-        return Integer.compare(sportsman1.getScore(), sportsman2.getScore());
+        return Double.compare(sportsman1.getScore(), sportsman2.getScore());
     }
 }

@@ -21,9 +21,9 @@ Task 1
 public class Sportsman implements Comparable<Sportsman> {
     private String name;
     private int age;
-    private int score;
+    private double score;
 
-    public Sportsman(String name, int age, int score) {
+    public Sportsman(String name, int age, double score) {
         this.name = name;
         this.age = age;
         this.score = score;
@@ -45,7 +45,7 @@ public class Sportsman implements Comparable<Sportsman> {
         this.age = age;
     }
 
-    public int getScore() {
+    public double getScore() {
         return score;
     }
 

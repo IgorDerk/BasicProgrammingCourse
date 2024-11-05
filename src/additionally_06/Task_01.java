@@ -8,6 +8,10 @@ Task 1
 public class Task_01 {
     public static void main(String[] args) {
         String text = "Programming is fun";
+        boolean contains  = text.contains("fun");
+        System.out.println(contains);
+
+
 
     }
 }

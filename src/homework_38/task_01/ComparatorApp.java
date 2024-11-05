@@ -6,11 +6,11 @@ import java.util.Comparator;
 public class ComparatorApp {
     public static void main(String[] args) {
         Sportsman[] sportsman = new Sportsman[5];
-        sportsman[0] = new Sportsman("Alex Johnson", 28, 95);
-        sportsman[1] = new Sportsman("Maria Lopez", 24, 88);
-        sportsman[2] = new Sportsman("Liam Chen", 31, 92);
-        sportsman[3] = new Sportsman("Emma Brown", 22, 79);
-        sportsman[4] = new Sportsman("James O'Connor", 26, 85);
+        sportsman[0] = new Sportsman("Alex Johnson", 28, 95.07);
+        sportsman[1] = new Sportsman("Maria Lopez", 24, 88.22);
+        sportsman[2] = new Sportsman("Liam Chen", 31, 95.08);
+        sportsman[3] = new Sportsman("Emma Brown", 22, 79.54);
+        sportsman[4] = new Sportsman("James O'Connor", 26, 85.00);
 
 
         // Отсортируйте его с использованием естественного порядка, определенного в Comparable
@@ -33,6 +33,7 @@ public class ComparatorApp {
                 return Integer.compare(sportsman1.getAge(), sportsman2.getAge());
             }
         });
+
         System.out.println(Arrays.toString(sportsman));
 
 
