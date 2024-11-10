@@ -108,7 +108,6 @@ public class Autobus {
         return countPassenger;
     }
 
-    // TODO переписать, используя StringBuilder
     public String toString() {
         StringBuilder sb = new StringBuilder("Autobus: {");
         sb.append("id: ").append(id);

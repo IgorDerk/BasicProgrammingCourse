@@ -19,6 +19,7 @@ public class MapExample {
         System.out.println("\n====================\n");
 
 
+
         List<String> strings = new ArrayList<>();
         System.out.println(strings.add("Hello"));
         strings.add("World");
@@ -84,8 +85,10 @@ public class MapExample {
         System.out.println(map);
         // V remove(Object key) - Удаляет пару ключ значение. Возвращает значение или null
         System.out.println("map.remove(100): " + map.remove(100)); // Ключа нет. Ничего не удалит. Вернет null
-        System.out.println("map.remove(4): " + map.remove(4)); // Ключ есть. Удалит пару ключ-значение. Вернет значение, которое было у ключа
+        System.out.println("map.remove(4): " + map.remove(4)); // Ключ есть. Удалит пару ключ-значение.
+        // Вернет значение, которое было у ключа
 
+        
         map.put(-1000, "Minus");
         // В качестве ключа допустимо использовать null
         map.put(null, "NullValue");

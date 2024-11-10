@@ -22,6 +22,7 @@ public class Task_01 {
         char firstChar = name.charAt(0);
         char lastChar = name.charAt(name.length() - 1);
 
+
         System.out.println(firstChar + " | " + (int) firstChar);
         System.out.println(lastChar + " | " + (int) lastChar);
 

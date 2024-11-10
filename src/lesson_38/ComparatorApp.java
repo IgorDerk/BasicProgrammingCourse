@@ -169,7 +169,6 @@ public class ComparatorApp {
 
         System.out.println(Arrays.toString(cars));
 
-        // Todo Comparator - статические методы - покажу на консультации
 
 
         Arrays.sort(cars, Comparator.comparing(Car::getYear));

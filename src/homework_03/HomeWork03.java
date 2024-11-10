@@ -25,7 +25,6 @@ public class HomeWork03 {
         double sumVarDouble = (var1 + var2 + var3 + var4) / 4.0;
         double difference = sumVarDouble - sumVar;
 
-
         System.out.println("The arithmetic mean of the values of the variables in the whole number: " + sumVar);
         System.out.println("Rest: " + rest);
         System.out.println("The arithmetic mean of the values of variables in decimal: " + sumVarDouble);
