@@ -22,9 +22,9 @@ public class AnagramChecker {
 
         boolean result = areAnagrams(string1, string2);
         if (result){
-            System.out.println("Strings \"" + string1 + "\" and \"" + string2 + "\" are anagrams.");
+            System.out.println("Строки \"" + string1 + "\" и \"" + string2 + "\" являются анаграммами.");
         } else {
-            System.out.println("Strings \"" + string1 + "\" and \"" + string2 + "\" are not anagrams.");
+            System.out.println("Строки \"" + string1 + "\" и \"" + string2 + "\" не являются анаграммами.");
         }
 
     }
