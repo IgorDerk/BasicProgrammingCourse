@@ -14,7 +14,7 @@ public class StringFilter {
     public static void main(String[] args) {
         List<String> strings = List.of("Apple", "Banana", "Avocado", "Apricot", "apple", "Avocado", "Almond", "Berry");
         List<String> filteredStrings = filterAndSortStrings(strings, "A");
-        System.out.println(filteredStrings); // Пример вывода: [Almond, Apricot, Avocado, Apple]
+        System.out.println(filteredStrings);
     }
 
     public static List<String> filterAndSortStrings(List<String> strings, String letter) {
