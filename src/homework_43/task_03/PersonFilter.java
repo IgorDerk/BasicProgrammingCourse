@@ -1,6 +1,7 @@
 package homework_43.task_03;
 
 import java.util.List;
+import java.util.Objects;
 import java.util.stream.Collectors;
 
 public class PersonFilter {
@@ -22,7 +23,8 @@ public class PersonFilter {
     public static List<Person> filterPeople(List<Person> people, int ageThreshold, String city) {
         return people.stream()
                 .filter(person -> person.getAge() > ageThreshold)
-                .filter(person -> person.getCity().equalsIgnoreCase(city))
+                //.filter(person -> person.getCity().equalsIgnoreCase(city))
+                .filter(person -> Objects.equals(city, person.getCity()))
                 .collect(Collectors.toList());
     }
 
