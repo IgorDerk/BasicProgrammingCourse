@@ -62,15 +62,14 @@ public class EmailAndPasswordValidator {
     }
 
     public static void isPasswordValid(String password) throws PasswordValidateException {
-        if (password == null || password.length() < 8) throw new PasswordValidateException("Длина пароля должна составлять не менее 8 символов!");
+        if (password == null || password.length() < 8)
+            throw new PasswordValidateException("Длина пароля должна составлять не менее 8 символов!");
 
         boolean isDigit = false;
         boolean isUpperCase = false;
         boolean isLowerCase = false;
         boolean isSpecialSymbol = false;
 
-        // альтернативный способ объявление переменных
-        boolean[] result = new boolean[4]; // false, false, false, false
 
         String symbols = "!%$@&*()[].,-";
 
@@ -89,7 +88,8 @@ public class EmailAndPasswordValidator {
         if (!isDigit) throw new PasswordValidateException("Пароль должен содержать хотя бы одну цифру!");
         if (!isUpperCase) throw new PasswordValidateException("Пароль должен содержать хотя бы одну заглавную букву!");
         if (!isLowerCase) throw new PasswordValidateException("Пароль должен содержать хотя бы одну строчную букву!");
-        if (!isSpecialSymbol) throw new PasswordValidateException("Пароль должен содержать хотя бы один специальный символ (например, !, %, $, @, &, *, (, ), [, ] и т.д.)");
+        if (!isSpecialSymbol) throw new PasswordValidateException("Пароль должен содержать хотя бы один специальный " +
+                "символ (например, !, %, $, @, &, *, (, ), [, ] и т.д.)");
 
     }
 }
